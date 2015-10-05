@@ -50,21 +50,21 @@ There are many options in `provider.json` that also control how the webapp behav
 
 * Invite codes:  Enabling the invite code functionality will require new users to provide a valid invite code while signing up for a new account. This is turned off by default, allowing all new users to create an account. To turn on invite codes, follow these steps after making sure that LEAP webapp and LEAP platform are both v0.8 or greater:
 
-  1. Set the `invite_code` option to `true` in `services/webapp.json`:
+Set the `invite_code` option to `true` in `services/webapp.json`:
 
     {
       "webapp": {
         "invite_required": true
       }
-    }
-    
-  2. Run `leap deploy` to enable the option.
+    }    
 
-  3. You can then generate invite codes by running 
+Run `leap deploy` to enable the option.
+
+You can then generate invite codes by running 
     
-    `RAILS_ENV=production bundle exec generate_invites[x,y]`
+  `RAILS_ENV=production bundle exec generate_invites[x,y]`
     
-    The *x* specifies the amount of codes to generate. The *y* parameter is optional: By default, all new invite codes can be used once and will then become invalid. If you provide another value for *y*, you can set a different amount of maximum uses for the codes you generate.
+The *x* specifies the amount of codes to generate. The *y* parameter is optional: By default, all new invite codes can be used once and will then become invalid. If you provide another value for *y*, you can set a different amount of maximum uses for the codes you generate.
 
 
 Customization
